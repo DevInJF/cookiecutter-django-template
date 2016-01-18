@@ -7,6 +7,7 @@
 * django-extensions
 * django-compressor and SASS/SCSS
 * 12factor based configuration
+* bower
 * Docker and docker-compose
 
 ## Instalation:
