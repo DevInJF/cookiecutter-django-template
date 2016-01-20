@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -62,6 +63,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = '{{ cookiecutter.repo_name }}.urls'
@@ -186,3 +188,8 @@ MEDIA_ROOT = str(BASE_DIR / 'media-root')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR / 'static-root')
+
+# E-mail
+# https://docs.djangoproject.com/en/1.9/topics/email/
+
+EMAIL_SUBJECT_PREFIX = '[{{ cookiecutter.project_name }}] '
