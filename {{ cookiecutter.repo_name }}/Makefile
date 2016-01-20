@@ -5,8 +5,9 @@ install:
 	@sleep 30
 	@docker-compose stop postgres
 	@docker-compose run --rm web python manage.py migrate
-	@docker-compose run --rm web python manage.py createsuperuser --username=admin --email=admin@admin.com
 	@docker-compose run --rm bower --allow-root --config.interactive=false install
+	@echo "Enter password for admin user:"
+	@docker-compose run --rm web python manage.py createsuperuser --username=admin --email=admin@admin.com
 
 build:
 	@docker-compose build
