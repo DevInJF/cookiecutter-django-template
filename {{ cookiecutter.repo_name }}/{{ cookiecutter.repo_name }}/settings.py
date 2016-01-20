@@ -146,7 +146,6 @@ AWS_PRELOAD_METADATA = True
 
 # Static files (CSS, JavaScript, Images) & Django-compressor
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-# https://django-compressor.readthedocs.org/en/latest/
 
 DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files.storage.FileSystemStorage')
 DEFAULT_S3_PATH = 'media'
@@ -165,9 +164,19 @@ STATICFILES_DIRS = [
     str(BASE_DIR / '{{ cookiecutter.repo_name }}' / 'static'),
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR / 'media-root')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = str(BASE_DIR / 'static-root')
+
+
+# Django-compressor
+# https://django-compressor.readthedocs.org/en/latest/
+
 COMPRESS_PRECOMPILERS = [
-    ('text/x-sass', 'sassc --include-path=%s {infile} {outfile}' % STATICFILES_DIRS[1]),
-    ('text/x-scss', 'sassc --include-path=%s --scss {infile} {outfile}' % STATICFILES_DIRS[1]),
+    ('text/x-sass', 'django_libsass.SassCompiler'),
+    ('text/x-scss', 'django_libsass.SassCompiler'),
 ]
 
 COMPRESS_ENABLED = config('COMPRESS_ENABLED', cast=bool, default=False)
@@ -183,13 +192,35 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.jsmin.JSMinFilter',
 ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = str(BASE_DIR / 'media-root')
-
-STATIC_URL = '/static/'
-STATIC_ROOT = str(BASE_DIR / 'static-root')
-
 # E-mail
 # https://docs.djangoproject.com/en/1.9/topics/email/
 
 EMAIL_SUBJECT_PREFIX = '[{{ cookiecutter.project_name }}] '
+
+
+# Logging
+# https://docs.djangoproject.com/en/1.9/topics/logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
