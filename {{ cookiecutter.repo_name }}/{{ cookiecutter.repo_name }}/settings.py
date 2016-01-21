@@ -133,6 +133,7 @@ USE_TZ = True
 
 
 # AWS
+# https://boto3.readthedocs.org/en/latest/
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
@@ -144,7 +145,7 @@ AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN')
 AWS_PRELOAD_METADATA = True
 
 
-# Static files (CSS, JavaScript, Images) & Django-compressor
+# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files.storage.FileSystemStorage')
