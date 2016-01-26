@@ -16,12 +16,15 @@
     
 ## Folder structure:
 
-    infobusca
+    $ tree projeto
+    projeto
+    ├── bin
+    │   └── gosu-amd64
     ├── bower.json
     ├── docker-compose.yml
     ├── Dockerfile
     ├── entrypoint.sh
-    ├── infobusca
+    ├── projeto
     │   ├── core
     │   │   ├── __init__.py
     │   │   ├── middleware.py
@@ -40,4 +43,5 @@
     ├── package.json
     └── requirements.txt
 
-    5 directories, 17 files
+    6 directories, 18 files
+
