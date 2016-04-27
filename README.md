@@ -31,6 +31,7 @@
     $ python manage.py migrate
     ** install node.js and bower if you don't have it already. **
     $ bower install
+    $ python manage.py runserver
     
 ## Folder structure:
 
