@@ -41,9 +41,12 @@ createsuperuser:
 	@docker-compose run --rm web python manage.py createsuperuser
 
 test:
-	@docker-compose run --rm -e REUSE_DB=1 web coverage run --source=. --omit=*/wsgi.py manage.py test
-	@docker-compose run --rm web coverage report
+	@docker-compose run --rm web coverage run --source=. --omit=*/wsgi.py manage.py test --keepdb --failfast
+	@docker-compose run --rm web coverage report -m --fail-under 90
 	@docker-compose run --rm web coverage html
+
+flake8:
+	@docker-compose run --rm web flake8 . --max-line-length=99 --max-complexity=8 --exclude="*/migrations/**"
 
 clear:
 	@rm -fr bower_components/
