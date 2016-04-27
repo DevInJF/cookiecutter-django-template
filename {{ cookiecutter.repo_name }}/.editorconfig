@@ -12,7 +12,7 @@ indent_style=space
 [*.py]
 indent_size=4
 
-[*.{html,js,coffee,css,less,sass,scss}]
+[*.{html,jade,js,coffee,css,less,sass,scss,yml,md}]
 indent_size=2
 
 [Makefile]
