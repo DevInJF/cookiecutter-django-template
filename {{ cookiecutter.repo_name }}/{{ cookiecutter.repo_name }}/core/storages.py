@@ -6,8 +6,10 @@ from storages.backends.s3boto import S3BotoStorage
 class FixedS3BotoStorage(S3BotoStorage):
     """
     fix the broken javascript admin resources with S3Boto on Django 1.4
-    for more info see http://code.larlet.fr/django-storages/issue/121/s3boto-admin-prefix-issue-with-django-14
+    for more info see
+    http://code.larlet.fr/django-storages/issue/121/s3boto-admin-prefix-issue-with-django-14
     """
+
     def url(self, name):
         url = super(FixedS3BotoStorage, self).url(name)
         if name.endswith('/') and not url.endswith('/'):

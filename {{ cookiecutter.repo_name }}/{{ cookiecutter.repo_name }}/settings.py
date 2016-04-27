@@ -148,10 +148,12 @@ AWS_PRELOAD_METADATA = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files.storage.FileSystemStorage')
+DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE',
+                              default='django.core.files.storage.FileSystemStorage')
 DEFAULT_S3_PATH = 'media'
 
-STATICFILES_STORAGE = config('STATICFILES_STORAGE', default='django.contrib.staticfiles.storage.StaticFilesStorage')
+STATICFILES_STORAGE = config('STATICFILES_STORAGE',
+                             default='django.contrib.staticfiles.storage.StaticFilesStorage')
 STATIC_S3_PATH = 'static'
 
 STATICFILES_FINDERS = [
