@@ -1,6 +1,8 @@
 UID = $(shell id -u $$USER)
 GID = $(shell id -g $$USER)
 
+default: up
+
 install:
 	@cp .env-example .env
 
