@@ -16,10 +16,21 @@
     
 ## Usage:
 
+#### With Docker
+
     $ cd my-project
     $ make install
     ** wait **
     $ make up
+    
+#### And without it...
+
+    $ cd my-project
+    $ cp .env-example .env
+    ** configure your database and put it in `.env` file. **
+    $ python manage.py migrate
+    ** install node.js and bower if you don't have it already. **
+    $ bower install
     
 ## Folder structure:
 
