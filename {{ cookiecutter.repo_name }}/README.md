@@ -13,4 +13,4 @@ Django.
 ### ...and without
 
   $ cp .env-example .env
-  * now create your database and configure it on `.env` file. *
+  ** now create your database and configure it on `.env` file. **
