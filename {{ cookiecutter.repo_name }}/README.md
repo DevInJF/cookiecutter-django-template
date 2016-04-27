@@ -7,10 +7,10 @@ Django.
 
 ### With Docker
 
-  $ make install
-  $ make up
+    $ make install
+    $ make up
 
 ### ...and without
 
-  $ cp .env-example .env
-  ** now create your database and configure it on `.env` file. **
+    $ cp .env-example .env
+    ** now create your database and configure it on `.env` file. **
