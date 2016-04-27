@@ -4,6 +4,5 @@
 
 ### With Docker
 
-    $ cd my-project
-    $ make install
-    $ make up
+  $ make install
+  $ make up
