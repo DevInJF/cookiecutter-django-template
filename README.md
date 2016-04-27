@@ -14,6 +14,13 @@
 
     $ cookiecutter https://github.com/dvl/cookiecutter-django-clean-template
     
+## Usage:
+
+    $ cd my-project
+    $ make install
+    ** wait **
+    $ make up
+    
 ## Folder structure:
 
     $ tree projeto
