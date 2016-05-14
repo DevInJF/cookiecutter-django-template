@@ -135,12 +135,13 @@ USE_TZ = True
 # AWS
 # https://boto3.readthedocs.org/en/latest/
 
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', '123')
 
-AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', '456')
 
-AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', '{{ cookiecutter.repo_name }}')
+
+AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN', 's3.amazonaws.com/{{ cookiecutter.repo_name }}')
 
 AWS_PRELOAD_METADATA = True
 
@@ -148,12 +149,10 @@ AWS_PRELOAD_METADATA = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE',
-                              default='django.core.files.storage.FileSystemStorage')
+DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', 'django.core.files.storage.FileSystemStorage')
 DEFAULT_S3_PATH = 'media'
 
-STATICFILES_STORAGE = config('STATICFILES_STORAGE',
-                             default='django.contrib.staticfiles.storage.StaticFilesStorage')
+STATICFILES_STORAGE = config('STATICFILES_STORAGE', 'django.contrib.staticfiles.storage.StaticFilesStorage')
 STATIC_S3_PATH = 'static'
 
 STATICFILES_FINDERS = [
@@ -200,6 +199,11 @@ COMPRESS_JS_FILTERS = [
 
 EMAIL_SUBJECT_PREFIX = '[{{ cookiecutter.project_name }}] '
 
+# Auth
+# https://docs.djangoproject.com/en/1.9/topics/auth
+
+LOGIN_REDIRECT_URL = '/'
+
 
 # Logging
 # https://docs.djangoproject.com/en/1.9/topics/logging
@@ -226,4 +230,20 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+
+# Testing
+# https://model-mommy.readthedocs.io/en/latest/index.html
+
+MOMMY_CUSTOM_FIELDS_GEN = {
+    'autoslug.fields.AutoSlugField': 'model_mommy.generators.gen_text',
+}
+
+# Messages
+# https://docs.djangoproject.com/en/1.9/ref/contrib/messages/
+
+from django.contrib.messages import constants as messages  # NOQA
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
 }
