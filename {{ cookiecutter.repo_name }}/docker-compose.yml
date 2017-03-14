@@ -16,8 +16,3 @@ web:
 
 postgres:
   image: postgres
-
-bower:
-  image: xdvl/bower
-  volumes_from:
-    - web
