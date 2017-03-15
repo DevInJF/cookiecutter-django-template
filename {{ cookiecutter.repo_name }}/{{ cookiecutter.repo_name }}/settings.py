@@ -150,10 +150,10 @@ AWS_PRELOAD_METADATA = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', 'django.core.files.storage.FileSystemStorage')
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DEFAULT_S3_PATH = 'media'
 
-STATICFILES_STORAGE = config('STATICFILES_STORAGE', 'django.contrib.staticfiles.storage.StaticFilesStorage')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATIC_S3_PATH = 'static'
 
 STATICFILES_FINDERS = [
@@ -163,7 +163,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    str(BASE_DIR / 'bower_components'),
+    str(BASE_DIR / 'node_modules'),
     str(BASE_DIR / '{{ cookiecutter.repo_name }}' / 'static'),
 ]
 
