@@ -8,7 +8,6 @@
 * django-compressor and SASS/SCSS
 * 12factor based configuration
 * coverage and flake8
-* bower
 * Docker and docker-compose
 
 ## Instalation:
