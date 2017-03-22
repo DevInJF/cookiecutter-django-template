@@ -13,7 +13,7 @@
 
 ## Instalation:
 
-    $ cookiecutter https://github.com/dvl/cookiecutter-django-clean-template
+    $ cookiecutter https://github.com/dvl/cookiecutter-django-template
     
 ## Folder structure:
 
