@@ -6,6 +6,7 @@
 * django-debug-toolbar
 * django-extensions
 * django-compressor and SASS/SCSS
+* django-storages for Amazon S3
 * 12factor based configuration
 * coverage and flake8
 * Docker and docker-compose
