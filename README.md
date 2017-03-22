@@ -1,4 +1,4 @@
-# cookiecutter-django-clean-template
+# cookiecutter-django-template
 
 ## Featuring:
 
