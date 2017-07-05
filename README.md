@@ -2,7 +2,7 @@
 
 ## Featuring:
 
-* Django 1.10
+* Django 1.11.3
 * django-debug-toolbar
 * django-extensions
 * django-compressor and SASS/SCSS
