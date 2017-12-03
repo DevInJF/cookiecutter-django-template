@@ -1,0 +1,26 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+
+python_version = "3.6"
+
+
+[packages]
+
+django = "*"
+dj-database-url = "*"
+django-compressor = "*"
+django-debug-toolbar = "*"
+django-libsass = "*"
+python-decouple = "*"
+pillow = "*"
+"psycopg2" = "*"
+uwsgi = "*"
+
+
+[dev-packages]
+
