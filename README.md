@@ -1,30 +1,22 @@
 # cookiecutter-django-template
 
-## Featuring:
+## Features:
 
-* Django 1.11.3
+* Django 2
 * django-debug-toolbar
 * django-extensions
 * django-compressor and SASS/SCSS
 * django-storages for Amazon S3
 * 12factor based configuration
-* coverage and flake8
-* Docker and docker-compose
 
 ## Instalation:
 
     $ cookiecutter https://github.com/dvl/cookiecutter-django-template
-    
+
 ## Folder structure:
 
     $ tree projeto
     projeto
-    ├── bin
-    │   └── gosu-amd64
-    ├── bower.json
-    ├── docker-compose.yml
-    ├── Dockerfile
-    ├── entrypoint.sh
     ├── projeto
     │   ├── core
     │   │   ├── __init__.py
@@ -39,7 +31,6 @@
     │   │   └── base.html
     │   ├── urls.py
     │   └── wsgi.py
-    ├── Makefile
     ├── manage.py
     ├── package.json
     └── requirements.txt
