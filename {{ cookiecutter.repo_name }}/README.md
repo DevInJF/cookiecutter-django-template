@@ -15,7 +15,7 @@ Pipenv should be able to configure the whole project since the installation of t
     $ pipenv install --ignore-pipfile
     $ npm install
     
-Make sure you have edited the file `.env` according your local enviroment, then you should be able to run the project.
+Make sure you have edited the `.env` file according your local environment, then you should be able to run the project.
 
 ## Running
 
