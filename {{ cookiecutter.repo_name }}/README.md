@@ -1,19 +1,30 @@
 # {{ cookiecutter.project_name }}
 
-This project is pre-configured with some facilities for a quick project start using
-Django.
+This project is pre-configured with some facilities for a quick project start using Django.
 
-## Instalation:
+## Requisites
+* [Pipenv](https://docs.pipenv.org/)
+* [NPM](https://nodejs.org/en/)
+* [PostgreSQL](https://postgresapp.com/)
 
-### With Docker
+Pipenv should be able to configure the whole project since the installation of the required Python version, virtualenv creation and the packages used by the project itself.
 
-    $ make install
-    $ make up
-
-### ...and without
+## Installation
 
     $ cp .env-example .env
-    ** now create your database and configure it on `.env` file. **
-    $ python manage.py migrate
+    $ pipenv install --ignore-pipfile
+    $ npm install
+    
+Make sure you have edited the file `.env` according your local enviroment, then you should be able to run the project.
+
+## Running
+
+Active the virtualenv with the following command
+
+    $ pipenv shell
+
+And then run the development server
+
     $ python manage.py runserver
 
+That's all
