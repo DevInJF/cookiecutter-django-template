@@ -11,4 +11,4 @@
 
 ## Instalation:
 
-    $ cookiecutter https://github.com/dvl/cookiecutter-django-template
+    $ cookiecutter https://github.com/DevInJF/cookiecutter-django-template
